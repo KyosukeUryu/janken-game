@@ -2,10 +2,18 @@
 
 class Player
   def hand
-    puts "0: グー"
-    puts "1: チョキ"
-    puts "2: パー"
-    your_num = gets.to_i
+    while true do
+      puts "0: グー"
+      puts "1: チョキ"
+      puts "2: パー"
+      your_num = gets.chomp
+      if your_num == "0" || your_num == "1" || your_num == "2"
+        return your_num.to_i
+        break
+      else
+        puts "0~2の数字を入力してください"
+      end
+    end
     # コンソールを入力待ち状態にし、プレイヤーがコンソールから打ち込んだ値を出力する処理のメソッドの処理をこの中に作成する
   end
 end
